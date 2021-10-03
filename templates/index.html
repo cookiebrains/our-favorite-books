@@ -1,0 +1,37 @@
+{% include "header.html" %}
+
+
+
+    <div class="container">
+    <h1 class="heading">Our Favorite Books</h1>
+    <hr>
+    <br>
+
+    {% for user in users %}
+                <h4>{{ user.name }}'s Favorite Books:</h4>
+        <div class="row row-cols-sm-3 row-cols-md-4  row-cols-lg-5 row-cols-xl-6 g-5">
+
+                {% for book in user.books[:6] %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{{ book.img_url }}" alt="book cover img"
+                                 class="border-bottom border-2">
+                            <div class="card-body">
+
+                                <p class="card-text">"{{ book.rating }}"</p>
+                                <p class="card-text">"{{ book.review }}"</p>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+        </div>
+        <br>
+        <hr>
+    {% endfor %}
+    </div>
+
+{% include "footer.html" %}

@@ -1,0 +1,9 @@
+.login-error {
+    color: darkred;
+}
+
+a.user-widget {
+    color: lightgreen !important;
+    font-weight: 400 !important;
+}
+
